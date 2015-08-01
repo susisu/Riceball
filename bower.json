@@ -1,0 +1,20 @@
+{
+  "name": "Riceball",
+  "version": "0.0.0",
+  "authors": [
+    "Susisu <susisu2413@yahoo.co.jp>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/susisu/Riceball",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "dev"
+  ],
+  "dependencies": {
+    "iceball": "susisu/iceball"
+  }
+}
