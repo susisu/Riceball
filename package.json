@@ -18,6 +18,8 @@
   "homepage": "https://github.com/susisu/Riceball",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-if": "^1.2.5",
+    "gulp-preprocess": "^1.2.0",
     "gulp-webpack": "^1.5.0"
   }
 }
