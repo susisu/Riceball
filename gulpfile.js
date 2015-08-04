@@ -1,7 +1,9 @@
-var gulp       = require("gulp"),
-    gulpif     = require("gulp-if"),
-    webpack    = require("gulp-webpack"),
-    preprocess = require("gulp-preprocess");
+var gulp        = require("gulp"),
+    gulpif      = require("gulp-if"),
+    webpack     = require("gulp-webpack"),
+    preprocess  = require("gulp-preprocess"),
+    runSequence = require("run-sequence"),
+    browserSync = require("browser-sync");
 
 var packageInfo = require("./package.json");
 var banner      = "Riceball " + packageInfo.version + "\n\
@@ -46,14 +48,29 @@ gulp.task("debug-build-pages", function () {
         .pipe(gulp.dest("./debug"));
 });
 
+gulp.task("browser-sync-up", function () {
+    browserSync.init({
+        "server": {
+            "baseDir": "debug",
+            "routes": {
+                "/bower_components": "bower_components"
+            }
+        }
+    });
+});
+
+gulp.task("browser-sync-reload", function () {
+    browserSync.reload();
+});
+
 gulp.task("debug-build", ["debug-build-js", "debug-build-css", "debug-build-pages"]);
 
 gulp.task("watch", function () {
-    gulp.watch("./src/js/**/*", ["debug-build-js"]);
-    gulp.watch("./src/css/**/*", ["debug-build-css"]);
-    gulp.watch("./src/pages/**/*", ["debug-build-pages"]);
+    gulp.watch("./src/js/**/*", function () { runSequence("debug-build-js", "browser-sync-reload"); });
+    gulp.watch("./src/css/**/*", function () { runSequence("debug-build-css", "browser-sync-reload"); });
+    gulp.watch("./src/pages/**/*", function () { runSequence("debug-build-pages", "browser-sync-reload"); });
 });
 
-gulp.task("debug", ["debug-build", "watch"]);
+gulp.task("debug", ["debug-build", "browser-sync-up", "watch"]);
 
 gulp.task("default", ["debug-build"]);

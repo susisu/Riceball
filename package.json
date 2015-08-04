@@ -17,9 +17,11 @@
   },
   "homepage": "https://github.com/susisu/Riceball",
   "devDependencies": {
+    "browser-sync": "^2.8.2",
     "gulp": "^3.9.0",
     "gulp-if": "^1.2.5",
     "gulp-preprocess": "^1.2.0",
-    "gulp-webpack": "^1.5.0"
+    "gulp-webpack": "^1.5.0",
+    "run-sequence": "^1.1.2"
   }
 }
