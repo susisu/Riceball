@@ -30,7 +30,13 @@ function main() {
             "transparent": false
         });
     var stage = new pixi.Container();
-    renderer.render(stage);
+
+    function animate() {
+        window.requestAnimationFrame(animate);
+        enderer.render(stage);
+    }
+
+    window.requestAnimationFrame(animate);
 }
 
 end_module();
