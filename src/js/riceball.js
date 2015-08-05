@@ -33,7 +33,7 @@ function main() {
 
     function animate() {
         window.requestAnimationFrame(animate);
-        enderer.render(stage);
+        renderer.render(stage);
     }
 
     window.requestAnimationFrame(animate);
