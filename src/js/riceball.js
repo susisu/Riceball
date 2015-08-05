@@ -23,10 +23,11 @@ function main() {
     window.document.getElementById("game").appendChild(canvas);
     var renderer =
         pixi.autoDetectRenderer(width, height, {
-            "view"      : canvas,
-            "antialias" : true,
-            "autoResize": true,
-            "resolution": window.devicePixelRatio
+            "view"       : canvas,
+            "antialias"  : true,
+            "autoResize" : true,
+            "resolution" : window.devicePixelRatio,
+            "transparent": false
         });
     var stage = new pixi.Container();
     renderer.render(stage);
