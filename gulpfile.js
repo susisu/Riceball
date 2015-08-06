@@ -71,6 +71,6 @@ gulp.task("watch", function () {
     gulp.watch("./src/pages/**/*", function () { runSequence("debug-build-pages", "browser-sync-reload"); });
 });
 
-gulp.task("debug", ["debug-build", "browser-sync-up", "watch"]);
+gulp.task("debug", function () { runSequence("debug-build", "browser-sync-up", "watch"); });
 
 gulp.task("default", ["debug-build"]);
