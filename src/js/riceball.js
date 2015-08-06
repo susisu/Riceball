@@ -13,6 +13,8 @@ function end_module() {
 var window = require("window"),
     pixi   = require("pixi");
 
+var scenes = require("./scenes.js");
+
 var width  = 800,
     height = 450;
 
@@ -30,6 +32,9 @@ function main() {
             "transparent": false
         });
     var stage = new pixi.Container();
+
+    var scene = new scenes.game.GameScene();
+    stage.addChild(scene);
 
     function animate() {
         window.requestAnimationFrame(animate);
