@@ -53,7 +53,8 @@ gulp.task("browser-sync-up", function () {
         "server": {
             "baseDir": "debug",
             "routes": {
-                "/bower_components": "bower_components"
+                "/bower_components": "bower_components",
+                "/assets"          : "assets"
             }
         }
     });
