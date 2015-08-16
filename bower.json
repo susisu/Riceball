@@ -16,6 +16,7 @@
   ],
   "dependencies": {
     "iceball": "susisu/iceball",
-    "pixi.js": "~3.0.7"
+    "pixi.js": "~3.0.7",
+    "electronvolt": "susisu/eV#~1.0.2"
   }
 }

@@ -7,7 +7,9 @@
 
 function end_module() {
     module.exports = Object.freeze({
-        "game": require("./scenes/game.js")
+        "game": require("./scenes/game.js"),
+        
+        "events": require("./scenes/events.js");
     });
 }
 
