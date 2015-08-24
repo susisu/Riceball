@@ -20,9 +20,10 @@ gulp.task("debug-build-js", function () {
                 "filename"     : "riceball.js"
             },
             "externals": {
-                "window" : true,
-                "iceball": true,
-                "pixi"   : "PIXI"
+                "window"      : true,
+                "electronvolt": true,
+                "iceball"     : true,
+                "pixi"        : "PIXI"
             },
             "plugins": [
                 new webpack.webpack.BannerPlugin(
