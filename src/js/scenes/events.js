@@ -25,7 +25,7 @@ SceneEvent.prototype = Object.create(ev.Event.prototype, {
         "value": function () {
             return this.formatToString("SceneEvent", ["type", "bubbles", "cancelable"]);
         }
-    }
+    },
     "clone": {
         "writable"    : true,
         "configurable": true,
